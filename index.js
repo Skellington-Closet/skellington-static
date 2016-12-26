@@ -7,11 +7,14 @@ module.exports = (filePath, route) => {
     return {}
   }
 
-  logger.info(`serving static content from ${filePath} at ${route}`)
-
   return {
     init: (controller, bot, expressApp) => {
-      expressApp.use(route, express.static(filePath))
+      if (expressApp) {
+        logger.info(`serving static content from ${filePath} at ${route}`)
+        expressApp.use(route, express.static(filePath))
+      } else {
+        logger.error(`you must configure Skellington with a port to serve static assets`)
+      }
     }
   }
 }

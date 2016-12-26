@@ -57,4 +57,14 @@ describe('static', function () {
     expect(result.init).not.to.exist
     expect(loggerMock.error).to.have.been.called
   })
+
+  it('should log an error if no express app is passed', function () {
+    const result = plugin('filePath', 'route')
+    expect(result.init).to.exist
+
+    result.init('controller', 'bot')
+    expect(loggerMock.error).to.have.been.called
+    expect(expressMock.static).not.to.have.been.called
+    expect(expressAppMock.use).not.to.have.been.called
+  })
 })
