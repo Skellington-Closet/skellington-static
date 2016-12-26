@@ -1,0 +1,48 @@
+{
+  "name": "skellington-static",
+  "version": "1.0.0",
+  "description": "Serve static files from your Skellington Slack bot",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "standard index.js test/*.js --fix",
+    "test": "istanbul cover --report lcov --dir ./coverage/ _mocha --recursive ./test/ --grep ./test/**/*.spec.js -- --colors --reporter spec",
+    "ci": "npm test && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skellington-Closet/skellington-static.git"
+  },
+  "keywords": [
+    "slack",
+    "skellington",
+    "static"
+  ],
+  "author": "Cole Furfaro-Strode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Skellington-Closet/skellington-static/issues"
+  },
+  "homepage": "https://github.com/Skellington-Closet/skellington-static#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "proxyquire": "^1.7.10",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "standard": "^8.6.0"
+  },
+  "standard": {
+    "globals": [
+      "after",
+      "afterEach",
+      "before",
+      "beforeEach",
+      "describe",
+      "it"
+    ]
+  }
+}
