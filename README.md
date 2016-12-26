@@ -1,5 +1,9 @@
 # skellington-static
 
+[![Build Status](https://travis-ci.org/Skellington-Closet/skellington-static.svg?branch=master)](https://travis-ci.org/Skellington-Closet/skellington-static)
+[![Coverage Status](https://coveralls.io/repos/github/Skellington-Closet/skellington-static/badge.svg?branch=master)](https://coveralls.io/github/Skellington-Closet/skellington-static?branch=master)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 Serve static files from your Skellington bot or Slack App.
 
 ## Why?
